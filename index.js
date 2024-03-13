@@ -1,17 +1,31 @@
-
-var nombreUsuario = prompt("Ingrese su nombre:");
-var apellidoUsuario = prompt("Ingrese su apellido:");
+const numeros = [3, 1, 1, 10, 5, 7, 2];
 
 
-var anoNacimiento = prompt("Ingrese su año de nacimiento:");
-var edad = 2024 - parseInt(anoNacimiento);
-
-var diaNacimiento = prompt("Ingrese el día de su nacimiento:");
-
-
-var mesNacimiento = prompt("Ingrese el mes de su nacimiento:");
+let suma = 0;
+for (let i = 0; i < numeros.length; i++) {
+    suma += numeros[i];
+}
 
 
-console.log("Hola, " + nombreUsuario + " " + apellidoUsuario + "!");
-console.log("Fecha de nacimiento: " + diaNacimiento + "/" + mesNacimiento + "/" + anoNacimiento);
-console.log("Usted tiene " + edad + " años.");
+let menor = numeros[0];
+for (let i = 1; i < numeros.length; i++) {
+    if (numeros[i] < menor) {
+        menor = numeros[i];
+    }
+}
+
+
+let mayor = numeros[0];
+for (let i = 1; i < numeros.length; i++) {
+    if (numeros[i] > mayor) {
+        mayor = numeros[i];
+    }
+}
+
+
+const resultadoHTML = document.createElement("p");
+resultadoHTML.style.color = "blue";
+resultadoHTML.textContent = `La suma total es ${suma}, el número menor es ${menor} y el número mayor es ${mayor}.`;
+
+
+document.body.appendChild(resultadoHTML);
